@@ -5,10 +5,9 @@
 
 int main()
 {
-	struct Luna_File *file = Luna_File.new((t_uchar)1);
+	struct Luna_File *file = Luna_File.new((t_uchar)1, NULL);
 
-	printf("%d\n", file->verbose);
-	printf("%p\n", file);
+	file->read(file, "test_files/00001_00010.txt");
 	file->destruct(file);
 	free(file);
 }
